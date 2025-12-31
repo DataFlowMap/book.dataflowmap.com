@@ -128,9 +128,42 @@ Let's define the visual direction for your book website. Here are several style 
 
 ---
 
+## How to Preview Different Styles
+
+All 5 style options have been implemented and you can easily switch between them using npm commands:
+
+### Development (with live reload):
+```bash
+npm run start:style1   # Modern Tech Professional (default)
+npm run start:style2   # Bold & Creative
+npm run start:style3   # Minimal & Elegant
+npm run start:style4   # Data-Inspired
+npm run start:style5   # Warm & Approachable
+```
+
+### Production builds:
+```bash
+npm run build:style1   # Modern Tech Professional
+npm run build:style2   # Bold & Creative
+npm run build:style3   # Minimal & Elegant
+npm run build:style4   # Data-Inspired
+npm run build:style5   # Warm & Approachable
+```
+
+The default `npm start` command uses **Style 1: Modern Tech Professional**.
+
+Each style has its own CSS file in `src/css/`:
+- `style1.css` - Modern Tech Professional
+- `style2.css` - Bold & Creative
+- `style3.css` - Minimal & Elegant
+- `style4.css` - Data-Inspired
+- `style5.css` - Warm & Approachable
+
+---
+
 ## Current Implementation (Default)
 
-The starter files use **Style Option 1: Modern Tech Professional**
+The default `npm start` uses **Style Option 1: Modern Tech Professional**
 
 **Current Colors**:
 ```css

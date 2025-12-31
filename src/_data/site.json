@@ -11,7 +11,7 @@
     "springer": "https://link.springer.com/book/9798868818820",
     "amazon": "https://www.amazon.com/dp/B0FJDRL1HD",
     "googleBooks": "https://books.google.com/books/about/The_Data_Flow_Map.html?id=4Kl40QEACAAJ"
-  }
+  },
   "navigation": [
     { "name": "Home", "url": "/" },
     { "name": "About the Book", "url": "/about/" },
