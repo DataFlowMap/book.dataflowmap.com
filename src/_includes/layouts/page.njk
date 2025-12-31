@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="page-content">
+  <div class="container">
+    {% if title %}
+      <h1>{{ title }}</h1>
+    {% endif %}
+    
+    {{ content | safe }}
+  </div>
+</article>

@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <a href="/" class="site-logo">
+        <span class="book-title">{{ site.title }}</span>
+      </a>
+      
+      <nav class="main-nav">
+        <ul>
+          {% for item in site.navigation %}
+          <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

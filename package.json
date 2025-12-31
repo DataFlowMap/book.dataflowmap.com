@@ -1,0 +1,15 @@
+{
+  "name": "data-flow-map-book-site",
+  "version": "1.0.0",
+  "description": "Static site for The Data Flow Map book by Nick Ryberg",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": ["data-flow-map", "book", "eleventy"],
+  "author": "Nick Ryberg",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
