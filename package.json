@@ -4,7 +4,17 @@
   "description": "Static site for The Data Flow Map book by Nick Ryberg",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "start:style1": "STYLE=1 eleventy --serve",
+    "start:style2": "STYLE=2 eleventy --serve",
+    "start:style3": "STYLE=3 eleventy --serve",
+    "start:style4": "STYLE=4 eleventy --serve",
+    "start:style5": "STYLE=5 eleventy --serve",
+    "build": "eleventy",
+    "build:style1": "STYLE=1 eleventy",
+    "build:style2": "STYLE=2 eleventy",
+    "build:style3": "STYLE=3 eleventy",
+    "build:style4": "STYLE=4 eleventy",
+    "build:style5": "STYLE=5 eleventy"
   },
   "keywords": ["data-flow-map", "book", "eleventy"],
   "author": "Nick Ryberg",
