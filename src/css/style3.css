@@ -237,6 +237,23 @@ main {
   font-weight: 300;
 }
 
+.cta-section .btn-primary {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.cta-section .btn-secondary {
+  background-color: white;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.cta-section .btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
 /* Features Grid */
 .features-grid {
   display: grid;

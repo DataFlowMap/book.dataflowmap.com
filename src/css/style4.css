@@ -267,6 +267,23 @@ main {
   color: var(--primary-color);
 }
 
+.cta-section .btn-primary {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border-color: var(--primary-color);
+}
+
+.cta-section .btn-secondary {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.cta-section .btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
 /* Features Grid */
 .features-grid {
   display: grid;
