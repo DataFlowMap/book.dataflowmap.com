@@ -98,6 +98,29 @@ main {
   background-color: var(--bg-color);
   border-radius: 2rem;
   margin: 2rem 0;
+  background-image: url('/images/geometric-wallpaper.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.page-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.88);
+  z-index: 0;
+  border-radius: 2rem;
+}
+
+.page-content > * {
+  position: relative;
+  z-index: 1;
 }
 
 .page-content h1 {
@@ -246,9 +269,15 @@ main {
 /* Features Grid */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin: 3rem 0;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .feature {

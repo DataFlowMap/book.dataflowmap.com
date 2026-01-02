@@ -14,7 +14,7 @@ Complete guide for deploying the Data Flow Map book website to Netlify at `book.
 
 ```bash
 # Clone the repository
-git clone https://github.com/nryberg/book.dataflowmap.com.git
+git clone https://github.com/DataFlowMap/book.dataflowmap.com.git
 cd book.dataflowmap.com
 
 # Install dependencies and test locally
@@ -33,7 +33,7 @@ git push origin main
 2. Click **"Add new site"** → **"Import an existing project"**
 3. Choose **"Deploy with GitHub"**
 4. Authorize Netlify to access your GitHub account
-5. Select the repository: `nryberg/book.dataflowmap.com`
+5. Select the repository: `DataFlowMap/book.dataflowmap.com`
 
 ### 3. Configure Build Settings
 

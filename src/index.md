@@ -18,24 +18,22 @@ title: Home
 <section class="page-content">
   <div class="container">
     <h2>A Universal Framework for Data Analysis</h2>
-    <p>Whether you're working in spreadsheets, databases, or AI models, you'll learn to elevate your analytical skills, tell compelling stories, and align your team for smarter decisions.</p>
-    
-    <div class="features-grid">
-      <div class="feature">
-        <h3>Think at a Higher Level</h3>
-        <p>Move beyond tool-specific approaches to develop a universal mental model for data analysis that works across any platform.</p>
-      </div>
-      
-      <div class="feature">
-        <h3>Three Core Motions</h3>
-        <p>Master the framework's three essential movements—source, focus, build—along with the section tagging action to simplify complexity.</p>
-      </div>
-      
-      <div class="feature">
-        <h3>Practical Applications</h3>
-        <p>Apply concepts to real data using Python, SQL, and Excel with hands-on examples and practical demonstrations.</p>
-      </div>
-    </div>
+    <p>Whether you're working in spreadshets, databases, or AI models, you'll learn to elevate your analytical skills, tell compelling stories, and align your team for smarter decisions.</p>
+
+<div class="features-grid">
+<div class="feature">
+<h3>Think at a Higher Level</h3>
+<p>Move beyond tool-specific approaches to develop a universal mental model for data analysis that works across any platform.</p>
+</div>
+<div class="feature">
+<h3>Three Core Motions</h3>
+<p>Master the framework's three essential movements—source, focus, build—along with the section tagging action to simplify complexity.</p>
+</div>
+<div class="feature">
+<h3>Practical Applications</h3>
+<p>Apply concepts to real data using Python, SQL, and Excel with hands-on examples and practical demonstrations.</p>
+</div>
+</div>
 
     <h2>Who This Book Is For</h2>
     <p>Aspiring data professionals and experienced analysts alike—from beginners to seasoned data engineers focused on data collection, analysis, and decision making.</p>

@@ -13,7 +13,7 @@ Static website for "The Data Flow Map" by Nick Ryberg, built with Eleventy and h
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/nryberg/book.dataflowmap.com.git
+git clone https://github.com/DataFlowMap/book.dataflowmap.com.git
 cd book.dataflowmap.com
 ```
 

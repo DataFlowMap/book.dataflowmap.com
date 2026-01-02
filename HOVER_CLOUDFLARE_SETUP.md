@@ -31,7 +31,7 @@ Do this first to get your Netlify subdomain.
 2. Sign up/login (use GitHub for easier integration)
 3. Click **"Add new site"** → **"Import an existing project"**
 4. Choose **"Deploy with GitHub"**
-5. Select repository: `nryberg/book.dataflowmap.com`
+5. Select repository: `DataFlowMap/book.dataflowmap.com`
 6. Verify settings (auto-detected from `netlify.toml`):
    - Build command: `npm run build`
    - Publish directory: `_site`
