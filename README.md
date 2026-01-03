@@ -122,10 +122,10 @@ npm run build
 ### Custom Domain Setup
 
 1. In Netlify, go to Site settings → Domain management
-2. Add custom domain: `book.dataflowmap.com`
+2. Add custom domain: `dataflowmap.com`
 3. Follow Netlify's instructions to configure DNS:
-   - Add a CNAME record pointing `book` to your Netlify subdomain
-   - Or use Netlify DNS for easier management
+   - Add A records pointing to Netlify's load balancer IPs
+   - Or use Cloudflare for CDN and DNS management (see HOVER_CLOUDFLARE_SETUP.md)
 
 ## 📝 Content Updates
 

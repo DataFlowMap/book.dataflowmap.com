@@ -1,6 +1,6 @@
 # Deployment Guide
 
-Complete guide for deploying the Data Flow Map book website to Netlify at `book.dataflowmap.com`.
+Complete guide for deploying the Data Flow Map book website to Netlify at `dataflowmap.com`.
 
 ## Prerequisites
 
@@ -52,7 +52,7 @@ Click **"Deploy site"**
 
 1. In Netlify, go to **Site settings** → **Domain management**
 2. Click **"Add custom domain"**
-3. Enter: `book.dataflowmap.com`
+3. Enter: `dataflowmap.com`
 4. Netlify will provide nameservers
 5. Update your domain registrar's nameservers to Netlify's nameservers
 6. Netlify will automatically provision SSL certificate
@@ -61,12 +61,12 @@ Click **"Deploy site"**
 
 1. In Netlify, go to **Site settings** → **Domain management**
 2. Click **"Add custom domain"**
-3. Enter: `book.dataflowmap.com`
-4. In your DNS provider, add a CNAME record:
+3. Enter: `dataflowmap.com`
+4. In your DNS provider, add A records (or use Cloudflare - see HOVER_CLOUDFLARE_SETUP.md):
    ```
-   Type: CNAME
-   Name: book
-   Value: [your-site-name].netlify.app
+   Type: A
+   Name: @
+   Value: 75.2.60.5 (Netlify's load balancer)
    TTL: 3600
    ```
 5. Wait for DNS propagation (can take 24-48 hours)
@@ -81,14 +81,14 @@ Click **"Deploy site"**
 
 ### 6. Configure Redirects (Optional)
 
-If you want `www.book.dataflowmap.com` to redirect to `book.dataflowmap.com`:
+If you want `www.dataflowmap.com` to redirect to `dataflowmap.com`:
 
-1. In DNS, add CNAME for `www.book` pointing to `book.dataflowmap.com`
+1. In DNS, add CNAME for `www` pointing to `dataflowmap.com`
 2. In Netlify, the `netlify.toml` already handles redirects
 
 ### 7. Test the Deployment
 
-1. Visit `https://book.dataflowmap.com`
+1. Visit `https://dataflowmap.com`
 2. Test all pages and links
 3. Verify mobile responsiveness
 4. Check that purchase links work correctly

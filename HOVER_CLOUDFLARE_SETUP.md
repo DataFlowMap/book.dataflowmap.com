@@ -1,6 +1,6 @@
 # Domain Setup Guide: Hover + Cloudflare + Netlify
 
-Complete guide for setting up `book.dataflowmap.com` using Hover for domain registration, Cloudflare for DNS/CDN, and Netlify for hosting.
+Complete guide for setting up `dataflowmap.com` using Hover for domain registration, Cloudflare for DNS/CDN, and Netlify for hosting.
 
 ## Architecture Overview
 
@@ -40,17 +40,12 @@ Do this first to get your Netlify subdomain.
 
 ### Step 2: Note Your Netlify Subdomain
 
-After deployment, Netlify assigns a subdomain like:
+After deployment, Netlify assigns a subdomain. For this site, the Netlify URL is:
 ```
-https://sparkly-unicorn-123456.netlify.app
+https://dataflowmap.netlify.app
 ```
 
 **Important**: Save this URL. You'll need it for Cloudflare setup.
-
-You can also set a custom subdomain:
-1. Go to **Site settings** → **Domain management** → **Custom domains**
-2. Click **"Options"** → **"Edit site name"**
-3. Choose something memorable like: `dataflowmap-book.netlify.app`
 
 ---
 
@@ -69,23 +64,33 @@ You can also set a custom subdomain:
 
 Cloudflare will scan your existing DNS records. Review them but don't worry about perfect accuracy - you'll add the book subdomain next.
 
-### Step 3: Add DNS Record for Subdomain
+### Step 3: Add DNS Records for Root Domain
 
 1. In Cloudflare dashboard, go to **DNS** → **Records**
 2. Click **"Add record"**
-3. Add a CNAME record:
+3. Add A records for Netlify's load balancer:
 
+**First A record:**
 ```
-Type:    CNAME
-Name:    book
-Target:  dataflowmap-book.netlify.app  (your Netlify subdomain)
+Type:    A
+Name:    @  (represents root domain)
+Target:  75.2.60.5  (Netlify's primary load balancer IP)
 Proxy:   ☁️ Proxied (orange cloud - ENABLED)
 TTL:     Auto
 ```
 
-**Important**: 
+**Second A record (for redundancy):**
+```
+Type:    A
+Name:    @
+Target:  99.83.190.102  (Netlify's secondary load balancer IP)
+Proxy:   ☁️ Proxied (orange cloud - ENABLED)
+TTL:     Auto
+```
+
+**Important**:
 - Use **Proxied** (orange cloud) to get Cloudflare's CDN and protection
-- Remove `https://` from the target, just use the subdomain
+- Use `@` for the root domain (not a subdomain)
 
 ### Step 4: Get Cloudflare Nameservers
 
@@ -125,9 +130,9 @@ jocelyn.ns.cloudflare.com
 - Hover will send you an email when nameserver changes are complete
 - Cloudflare will email you when your site is active
 
-**Check status**: 
+**Check status**:
 - In Cloudflare dashboard, wait for **"Status: Active"**
-- Or use: `dig book.dataflowmap.com` to check DNS
+- Or use: `dig dataflowmap.com` to check DNS
 
 ---
 
@@ -137,7 +142,7 @@ jocelyn.ns.cloudflare.com
 
 1. In Netlify, go to **Site settings** → **Domain management**
 2. Click **"Add custom domain"**
-3. Enter: `book.dataflowmap.com`
+3. Enter: `dataflowmap.com`
 4. Click **"Verify"**
 5. Netlify will show a warning about DNS - click **"Add domain"** anyway
    (You've already set up DNS in Cloudflare)
@@ -174,29 +179,29 @@ Since Cloudflare handles SSL, you need to configure this properly:
 ### Step 1: Check DNS Propagation
 
 Use these tools:
-- https://www.whatsmydns.net - Enter `book.dataflowmap.com`
-- Command line: `dig book.dataflowmap.com`
+- https://www.whatsmydns.net - Enter `dataflowmap.com`
+- Command line: `dig dataflowmap.com`
 
 Look for:
 ```
-book.dataflowmap.com.  300  IN  CNAME  dataflowmap-book.netlify.app.
+dataflowmap.com.  300  IN  A  75.2.60.5
 ```
 
 ### Step 2: Test Your Site
 
-1. Visit `http://book.dataflowmap.com` (should redirect to HTTPS)
-2. Visit `https://book.dataflowmap.com` (should load your site)
+1. Visit `http://dataflowmap.com` (should redirect to HTTPS)
+2. Visit `https://dataflowmap.com` (should load your site)
 3. Check SSL certificate:
    - Click the padlock in browser
    - Should show Cloudflare SSL certificate
 
 ### Step 3: Test All Pages
 
-- Home: `https://book.dataflowmap.com/`
-- About: `https://book.dataflowmap.com/about/`
-- Author: `https://book.dataflowmap.com/author/`
-- Buy: `https://book.dataflowmap.com/buy/`
-- Resources: `https://book.dataflowmap.com/resources/`
+- Home: `https://dataflowmap.com/`
+- About: `https://dataflowmap.com/about/`
+- Author: `https://dataflowmap.com/author/`
+- Buy: `https://dataflowmap.com/buy/`
+- Resources: `https://dataflowmap.com/resources/`
 
 ---
 
@@ -204,14 +209,14 @@ book.dataflowmap.com.  300  IN  CNAME  dataflowmap-book.netlify.app.
 
 ### DNS Not Resolving
 
-**Problem**: `book.dataflowmap.com` doesn't load
+**Problem**: `dataflowmap.com` doesn't load
 
 **Solutions**:
 1. Wait longer - DNS propagation can take up to 48 hours
 2. Check nameservers in Hover are exactly what Cloudflare provided
-3. Verify CNAME record in Cloudflare:
-   - Name: `book`
-   - Target: `your-site.netlify.app`
+3. Verify A records in Cloudflare:
+   - Name: `@`
+   - Target: `75.2.60.5` and `99.83.190.102`
    - Proxied: ON (orange cloud)
 
 ### SSL Certificate Errors
@@ -229,16 +234,16 @@ book.dataflowmap.com.  300  IN  CNAME  dataflowmap-book.netlify.app.
 **Problem**: Site loads but shows "Page not found"
 
 **Solutions**:
-1. In Netlify, verify the domain is added: `book.dataflowmap.com`
+1. In Netlify, verify the domain is added: `dataflowmap.com`
 2. Check that the site deployed successfully
 3. Verify the `_site` directory has content after build
 
 ### Cloudflare Shows "Active" But Site Doesn't Load
 
-**Problem**: Cloudflare is active but subdomain doesn't work
+**Problem**: Cloudflare is active but domain doesn't work
 
 **Solutions**:
-1. Verify CNAME record has correct target (your Netlify subdomain)
+1. Verify A records have correct Netlify IPs (75.2.60.5 and 99.83.190.102)
 2. Make sure Proxied (orange cloud) is ENABLED
 3. Check if Netlify has accepted the custom domain
 
@@ -259,7 +264,7 @@ book.dataflowmap.com.  300  IN  CNAME  dataflowmap-book.netlify.app.
    - Brotli: Enable
 
 3. **Page Rules** (Optional):
-   - Create rule for `book.dataflowmap.com/*`
+   - Create rule for `dataflowmap.com/*`
    - Cache Level: Cache Everything
    - Edge Cache TTL: 1 month
 
@@ -269,9 +274,9 @@ book.dataflowmap.com.  300  IN  CNAME  dataflowmap-book.netlify.app.
 
 ### DNS Configuration
 ```
-Type:     CNAME
-Name:     book
-Target:   your-site.netlify.app
+Type:     A
+Name:     @  (root domain)
+Target:   75.2.60.5 (and 99.83.190.102 for redundancy)
 Proxied:  ☁️ ON (orange cloud)
 ```
 
@@ -322,7 +327,7 @@ Full - If Netlify SSL is pending
 
 ## Next Steps After Setup
 
-1. ✅ Verify site is live at `https://book.dataflowmap.com`
+1. ✅ Verify site is live at `https://dataflowmap.com`
 2. Set up Cloudflare Web Analytics (free, privacy-friendly)
 3. Configure email forwarding in Cloudflare (if needed)
 4. Enable Cloudflare's security features

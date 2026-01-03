@@ -41,8 +41,8 @@ Use this checklist to get your book website up and running.
 - [ ] Connect GitHub repository
 - [ ] Verify build settings
 - [ ] Deploy site
-- [ ] Set up custom domain `book.dataflowmap.com`
-- [ ] Configure DNS (CNAME or Netlify DNS)
+- [ ] Set up custom domain `dataflowmap.com`
+- [ ] Configure DNS (A records or Cloudflare - see HOVER_CLOUDFLARE_SETUP.md)
 - [ ] Enable HTTPS
 - [ ] Test live site
 
