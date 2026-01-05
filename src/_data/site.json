@@ -10,6 +10,8 @@
   "purchaseLinks": {
     "springer": "https://link.springer.com/book/9798868818820",
     "amazon": "https://www.amazon.com/dp/B0FJDRL1HD",
+    "booksAMillion": "https://www.booksamillion.com/product/9798868818820",
+    "bookshop": "https://bookshop.org/p/books/the-data-flow-map-a-practical-guide-to-clear-and-creative-analytics-in-any-data-environment-nick-ryberg/a4c9ce0b9f5b20d6?ean=9798868818820",
     "googleBooks": "https://books.google.com/books/about/The_Data_Flow_Map.html?id=4Kl40QEACAAJ"
   },
   "navigation": [
