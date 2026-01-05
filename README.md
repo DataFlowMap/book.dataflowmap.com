@@ -31,6 +31,27 @@ npm start
 
 The site will automatically rebuild when you make changes to files.
 
+### Preview Different Visual Styles
+
+The site includes 5 different visual themes that can be previewed locally:
+
+```bash
+npm run start:style1   # Modern Tech Professional (default)
+npm run start:style2   # Bold & Creative
+npm run start:style3   # Minimal & Elegant
+npm run start:style4   # Data-Inspired
+npm run start:style5   # Warm & Approachable
+```
+
+### Preview with Draft Blog Posts
+
+To preview draft blog posts locally:
+
+```bash
+npm run start:drafts              # Show drafts with default style
+npm run start:style1:drafts       # Show drafts with specific style
+```
+
 ### Build for Production
 
 ```bash
@@ -52,17 +73,25 @@ book-site/
 │   ├── _includes/        # Templates and layouts
 │   │   ├── layouts/
 │   │   │   ├── base.njk  # Base HTML template
-│   │   │   └── page.njk  # Page layout
+│   │   │   ├── page.njk  # Page layout
+│   │   │   └── post.njk  # Blog post layout
 │   │   └── partials/
 │   │       ├── header.njk
 │   │       ├── footer.njk
 │   │       └── cta.njk   # Call-to-action buttons
 │   ├── css/
-│   │   └── main.css      # Styles
-│   ├── images/           # Images (book cover, etc.)
+│   │   ├── style1.css    # Modern Tech Professional
+│   │   ├── style2.css    # Bold & Creative
+│   │   ├── style3.css    # Minimal & Elegant
+│   │   ├── style4.css    # Data-Inspired
+│   │   └── style5.css    # Warm & Approachable
+│   ├── images/           # Images (book cover, logo, etc.)
+│   ├── blog/             # Blog posts
+│   │   └── *.md          # Individual blog posts
 │   ├── index.md          # Home page
 │   ├── about.md          # About the book
 │   ├── author.md         # About the author
+│   ├── blog.md           # Blog listing page
 │   ├── buy.md            # Purchase page
 │   └── resources.md      # Resources page
 └── _site/                # Generated site (git-ignored)
@@ -94,12 +123,61 @@ description: Page description for SEO
 
 ### Modify Styles
 
-Edit `src/css/main.css` to customize the look and feel. CSS variables are defined in the `:root` selector for easy theming.
+The site includes 5 visual themes in `src/css/style1.css` through `style5.css`. Each theme uses CSS variables defined in the `:root` selector for easy customization. The default theme (style1) is used unless you specify otherwise with the STYLE environment variable.
 
 ### Add Images
 
 1. Place images in `src/images/`
 2. Reference them in your content: `![Alt text](/images/your-image.jpg)`
+
+### Working with the Blog
+
+#### Adding a New Blog Post
+
+Create a new `.md` file in `src/blog/` with this frontmatter:
+
+```markdown
+---
+layout: layouts/post.njk
+title: Your Post Title
+date: 2026-01-05
+author: Nick Ryberg
+excerpt: A brief summary for the blog listing page
+---
+
+Your content here...
+```
+
+#### Using Draft Posts
+
+Mark posts as drafts to exclude them from production builds:
+
+```markdown
+---
+layout: layouts/post.njk
+title: Work in Progress
+date: 2026-01-05
+author: Nick Ryberg
+draft: true
+excerpt: This post is still being written
+---
+
+Draft content...
+```
+
+Draft posts:
+- **Won't appear** in production builds (`npm run build`)
+- **Will appear** when using `npm run start:drafts` or `npm run build:drafts`
+- Are useful for working on content before publishing
+
+#### Blog Features
+
+- Chronological post listing (newest first)
+- Individual post pages with optimized reading layout
+- Author attribution and publish dates
+- Excerpt summaries on listing page
+- Code syntax highlighting
+- Responsive design across all 5 visual themes
 
 ## 🌐 Deployment to Netlify
 
