@@ -308,6 +308,142 @@ main {
   font-weight: 700;
 }
 
+/* Blog */
+.blog-list {
+  margin: 3rem 0;
+}
+
+.blog-preview {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.blog-preview:last-child {
+  border-bottom: none;
+}
+
+.blog-preview-title {
+  margin: 0 0 0.5rem 0;
+}
+
+.blog-preview-title a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.blog-preview-title a:hover {
+  color: var(--primary-color);
+}
+
+.blog-preview-meta {
+  color: var(--text-light);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.blog-preview-author {
+  margin-left: 1rem;
+}
+
+.blog-preview-excerpt {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.read-more:hover {
+  color: var(--secondary-color);
+}
+
+/* Blog Post */
+.blog-post {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-title {
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+}
+
+.post-meta {
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.post-author {
+  margin-left: 1rem;
+}
+
+.post-content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.post-content h2 {
+  margin: 2rem 0 1rem 0;
+  color: var(--text-color);
+}
+
+.post-content h3 {
+  margin: 1.5rem 0 1rem 0;
+  color: var(--text-color);
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+}
+
+.post-content code {
+  background-color: var(--bg-light);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875em;
+}
+
+.post-content pre {
+  background-color: var(--bg-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.post-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
 /* Footer */
 .site-footer {
   background-color: var(--bg-light);

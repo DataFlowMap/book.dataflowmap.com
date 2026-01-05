@@ -17,6 +17,7 @@
     { "name": "About the Book", "url": "/about/" },
     { "name": "Author", "url": "/author/" },
     { "name": "Get the Book", "url": "/buy/" },
+    { "name": "Blog", "url": "/blog/" },
     { "name": "Resources", "url": "/resources/" }
   ]
 }

@@ -17,12 +17,14 @@ title: Home
 
 <section class="page-content">
   <div class="container">
-    <h2>A Universal Framework for Data Analysis</h2>
-    <p>Whether you're working in spreadshets, databases, or AI models, you'll learn to elevate your analytical skills, tell compelling stories, and align your team for smarter decisions.</p>
+
+## A Universal Framework for Data Analysis
+
+Whether you're working in spreadsheets, databases, or AI models, you'll learn how to elevate your analytical skills, tell compelling stories, and align your team for smarter decisions.
 
 <div class="features-grid">
 <div class="feature">
-<h3>Think at a Higher Level</h3>
+<h3>Elevated Analytic Thinking</h3>
 <p>Move beyond tool-specific approaches to develop a universal mental model for data analysis that works across any platform.</p>
 </div>
 <div class="feature">
@@ -35,16 +37,16 @@ title: Home
 </div>
 </div>
 
-    <h2>Who This Book Is For</h2>
-    <p>Aspiring data professionals and experienced analysts alike—from beginners to seasoned data engineers focused on data collection, analysis, and decision making.</p>
-    
-    <ul>
-      <li>Data analysts looking to communicate more effectively</li>
-      <li>Business professionals working with data</li>
-      <li>Engineers transitioning between platforms</li>
-      <li>Anyone wanting to think more clearly about data</li>
-    </ul>
+## Who This Book Is For
 
-    {% include "partials/cta.njk" %}
+Aspiring data professionals and experienced analysts alike—from beginners to seasoned data engineers focused on data collection, analysis, and decision making.
+
+- Data analysts looking to communicate more effectively
+- Business professionals working with data
+- Engineers transitioning between platforms
+- Anyone wanting to think more clearly about data
+
+{% include "partials/cta.njk" %}
+
   </div>
 </section>
