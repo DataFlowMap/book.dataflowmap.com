@@ -431,6 +431,18 @@ main {
   border-top: 1px solid var(--border-color);
 }
 
+/* Author Headshot */
+.author-headshot {
+  float: right;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 0 1.5rem 2rem;
+  border: 4px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 /* Footer */
 .site-footer {
   background-color: var(--bg-light);
@@ -477,5 +489,11 @@ main {
   .btn {
     width: 100%;
     max-width: 300px;
+  }
+
+  .author-headshot {
+    float: none;
+    display: block;
+    margin: 0 auto 2rem auto;
   }
 }
