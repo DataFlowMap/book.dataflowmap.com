@@ -31,25 +31,12 @@ npm start
 
 The site will automatically rebuild when you make changes to files.
 
-### Preview Different Visual Styles
-
-The site includes 5 different visual themes that can be previewed locally:
-
-```bash
-npm run start:style1   # Modern Tech Professional (default)
-npm run start:style2   # Bold & Creative
-npm run start:style3   # Minimal & Elegant
-npm run start:style4   # Data-Inspired
-npm run start:style5   # Warm & Approachable
-```
-
 ### Preview with Draft Blog Posts
 
 To preview draft blog posts locally:
 
 ```bash
-npm run start:drafts              # Show drafts with default style
-npm run start:style1:drafts       # Show drafts with specific style
+npm run start:drafts              # Show drafts
 ```
 
 ### Build for Production
@@ -80,11 +67,7 @@ book-site/
 │   │       ├── footer.njk
 │   │       └── cta.njk   # Call-to-action buttons
 │   ├── css/
-│   │   ├── style1.css    # Modern Tech Professional
-│   │   ├── style2.css    # Bold & Creative
-│   │   ├── style3.css    # Minimal & Elegant
-│   │   ├── style4.css    # Data-Inspired
-│   │   └── style5.css    # Warm & Approachable
+│   │   └── main.css      # Site stylesheet (editorial: Fraunces + Inter)
 │   ├── images/           # Images (book cover, logo, etc.)
 │   ├── blog/             # Blog posts
 │   │   └── *.md          # Individual blog posts
@@ -123,7 +106,7 @@ description: Page description for SEO
 
 ### Modify Styles
 
-The site includes 5 visual themes in `src/css/style1.css` through `style5.css`. Each theme uses CSS variables defined in the `:root` selector for easy customization. The default theme (style1) is used unless you specify otherwise with the STYLE environment variable.
+All styling lives in `src/css/main.css`. Colors, fonts, and spacing are driven by CSS variables in the `:root` selector (e.g. `--primary-color`, `--font-serif`, `--font-sans`) for easy customization.
 
 ### Add Images
 

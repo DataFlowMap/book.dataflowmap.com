@@ -5,12 +5,6 @@ module.exports = function(eleventyConfig) {
   // Copy any images or other static assets
   eleventyConfig.addPassthroughCopy("src/images");
 
-  // Add global data for style selection
-  eleventyConfig.addGlobalData("styleFile", () => {
-    const style = process.env.STYLE || "1";
-    return `style${style}.css`;
-  });
-
   // Create a collection for blog posts
   eleventyConfig.addCollection("posts", function(collectionApi) {
     const includeDrafts = process.env.DRAFTS === 'true';

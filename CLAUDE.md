@@ -15,15 +15,6 @@ npm run build        # Build to _site/
 npm run start:drafts
 ```
 
-**Preview visual themes (1–5):**
-```bash
-npm run start:style1   # Modern Tech Professional (default)
-npm run start:style2   # Bold & Creative
-npm run start:style3   # Minimal & Elegant
-npm run start:style4   # Data-Inspired
-npm run start:style5   # Warm & Approachable
-```
-
 There are no tests or linting configured.
 
 ## Architecture
@@ -33,16 +24,17 @@ This is an [Eleventy](https://www.11ty.dev/) static site for "The Data Flow Map"
 **Key config:** `.eleventy.js` — defines the `posts` collection (filtered by `DRAFTS` env var, sorted newest-first), the `readableDate` filter, passes through `src/css` and `src/images`, and sets `src/` as input.
 
 **Environment variables:**
-- `STYLE` (1–5) — selects which CSS theme file to inject (defaults to `style1.css`)
 - `DRAFTS=true` — includes posts with `draft: true` in frontmatter
 
 **Global site data:** `src/_data/site.json` — single source of truth for title, author, purchase links, and navigation menu.
 
 **Templates:** Nunjucks (`.njk`) in `src/_includes/`:
-- `layouts/base.njk` — root HTML shell, injects the style CSS file via `styleFile` global
+- `layouts/base.njk` — root HTML shell; links the single stylesheet `src/css/main.css` and the Fraunces/Inter web fonts
 - `layouts/page.njk` — standard content pages
 - `layouts/post.njk` — blog post layout
 - `partials/` — header, footer, cta (call-to-action buttons)
+
+**Styling:** One stylesheet, `src/css/main.css`. Editorial design — Fraunces (serif) headings, Inter body, brand-blue (`#2563eb`) accent. Blog rules use `--blog-*` variables; site-wide content rules use `:has()` guards so they don't leak into the blog.
 
 **Blog posts:** Markdown files in `src/blog/`. Required frontmatter:
 ```markdown
