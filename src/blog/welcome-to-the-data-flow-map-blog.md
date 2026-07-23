@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: Welcome to The Data Flow Map Blog
 date: 2026-01-02
 author: Nick Ryberg
-draft: true
+draft: false
 excerpt: Introducing the Data Flow Map blog, where we'll explore data analysis concepts, practical applications, and the art of thinking about data.
 ---
 
