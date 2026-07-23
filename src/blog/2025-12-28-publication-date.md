@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: Publication!
 date: 2025-12-28
 author: Nick Ryberg
-draft: false
+draft: true
 excerpt: The book is live (but not yet available)
 ---
 
