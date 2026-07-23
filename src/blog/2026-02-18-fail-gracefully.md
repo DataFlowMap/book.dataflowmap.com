@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: Fail (and recover) Gracefully
 date: 2026-03-02
 author: Nick Ryberg
-draft: true
+draft: false
 excerpt: If the data is flowing the the bar charts are thumping, well, you must be doing something right.  Heck it must be all right? Right? 
 ---
 
